@@ -12,14 +12,16 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # Check if the length of the string is at least 3
-        # Check if the string already ends with 'ing'
-            # Add 'ly' to the end of the string
-       
-            # Add 'ing' to the end of the string
-         
-    # If the length of the string is less than 3, return the string unchanged
-  return ''
+  # first we check if the string is at least length of 3
+  if len(s) >= 3:
+    # check if it ends with ing
+    if s.endswith('ing'):
+      # we take the original string, and add ly to its end
+      return s + 'ly'
+    else:
+      # we take the original string, and add ing to its end
+      return s + 'ing'
+  return s
 
        
 
@@ -33,7 +35,22 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  return s
+    # Check if the string contains 'not' and 'bad' in that order
+    if 'not' in s and 'bad' in s:
+        # Get the indices of 'not' and 'bad'
+        idx_not = s.index('not')
+        idx_bad = s.index('bad')
+        # Check if 'bad' comes after 'not'
+        if idx_bad > idx_not:
+            # Get the start index of the substring 'not'...'bad'
+            start_idx = idx_not
+            # Get the end index of the substring 'not'...'bad'
+            end_idx = idx_bad + len('bad')
+            # Create the substring 'not'...'bad'
+            substr = s[start_idx:end_idx]
+            # Replace the substring 'not'...'bad' with 'good' in the string
+            s = s.replace(substr, 'good')
+    return s
   
 
 
