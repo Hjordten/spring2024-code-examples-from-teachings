@@ -21,9 +21,12 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    
-    
-    return '' 
+    if count < 10:
+      return f'Number of donuts: {count}'
+    else:
+       return 'Number of donuts: many'
+     
+  
 
 
 # B. both_ends
@@ -32,7 +35,14 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    return ''
+    if len(s) <= 2:
+       return ''
+    else:
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+   # <object>[:<number>]: Retrieves all elements from the start of the object up to, but not including, the specified index.
+   # <object>[<number>:]: Retrieves all elements from the specified index to the end of the object.
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+       return s[:2] + s[-2:]
 
 
 # C. fix_start
@@ -45,7 +55,14 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-  return ''
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+   # <object>[:<number>]: Retrieves all elements from the start of the object up to, but not including, the specified index.
+   # <object>[<number>:]: Retrieves all elements from the specified index to the end of the object.
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+  first_char = s[0]
+  rest_of_string = s[1:]
+  replaced_string = rest_of_string.replace(first_char, '*')
+  return first_char + replaced_string
 
 
 # D. MixUp
@@ -56,7 +73,17 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  return ''
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+   # <object>[:<number>]: Retrieves all elements from the start of the object up to, but not including, the specified index.
+   # <object>[<number>:]: Retrieves all elements from the specified index to the end of the object.
+   # <object>[<number>]: Accesses the element at the specified index position in the object.
+ string_a_first_two_letters = a[:2]
+ string_b_first_two_letters = b[:2]
+ remaining_a = a[2:]
+ remaining_b = b[2:]
+ replaced_string_a = string_b_first_two_letters + remaining_a
+ replaced_string_b = string_a_first_two_letters + remaining_b
+ return f'{replaced_string_a} {replaced_string_b}'
 
 
 # Provided simple test() function used in main() to print
