@@ -57,23 +57,38 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 
+# <object>[<number>:<number>] Accesses the elements from the first number, up to but not including, the second number
+# <object>[:<number>] Retrieves all elements from the start of the object up to, but not including, the specified index.
+# <object>[<number>:] Retrieves all elements from the specified index to the end of the object.
+# <object>[<number>] Accesses the element at the specified index position in the object.
+
 def front_back(a, b):
   # First we check if the length of string a is odd
-
-  # we get the front of string a, remember to get the extra letter
-  
-  # we get the back of string a, remember to get the extra letter
-
-  # else  
-  # If the length of the string is even
+  if len(a) % 2 != 0:
+   # we get the front of string a, remember to get the extra letter
+   a_front = a[:(len(a) // 2) + 1]
+   # we get the back of string a, remember to get the extra letter
+   a_back = a[(len(a) // 2) + 1:]
+  # else 
+  else:  
   # we get the front of string a, we dont need the extra letter, since the length is even
+    a_front = a[:(len(a) // 2)]
   # we get the back of string a, we dont need the extra letter, since the length is even
+    a_back = a[(len(a) // 2):]
   # we check if the length of string b is odd 
- # we get the front of string b, remember to get the extra letter
- # we get the back of string b, remember to get the extra letter
+  if len(b) % 2 != 0:
+  # we get the front of string b, remember to get the extra letter
+    b_front = b[:(len(b) // 2) + 1]
+  # we get the back of string b, remember to get the extra letter
+    b_back = b[(len(b) // 2) + 1:]
   #else    
-
-  return ''
+  else:  
+  # we get the front of string b, we dont need the extra letter, since the length is even
+     b_front = b[:(len(b) // 2)]
+  # we get the back of string b, we dont need the extra letter, since the length is even
+     b_back = b[(len(b) // 2):]
+  # return a formatted string with the correct variables   
+  return f'{a_front}{b_front}{a_back}{b_back}'
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
