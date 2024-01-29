@@ -35,22 +35,17 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    # Check if the string contains 'not' and 'bad' in that order
-    if 'not' in s and 'bad' in s:
-        # Get the indices of 'not' and 'bad'
-        idx_not = s.index('not')
-        idx_bad = s.index('bad')
-        # Check if 'bad' comes after 'not'
-        if idx_bad > idx_not:
-            # Get the start index of the substring 'not'...'bad'
-            start_idx = idx_not
-            # Get the end index of the substring 'not'...'bad'
-            end_idx = idx_bad + len('bad')
-            # Create the substring 'not'...'bad'
-            substr = s[start_idx:end_idx]
-            # Replace the substring 'not'...'bad' with 'good' in the string
-            s = s.replace(substr, 'good')
-    return s
+ # first we check if not and bad exists in string
+ if 'not' in s and 'bad' in s:
+   # we find the index of not and bad
+   not_index = s.index('not')
+   bad_index = s.index('bad') + len('bad')
+   if not_index < bad_index:
+    not_bad_substring = s[not_index:bad_index]
+    s = s.replace(not_bad_substring, 'good')
+ return s      
+
+
   
 
 
