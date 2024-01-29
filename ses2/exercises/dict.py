@@ -10,8 +10,7 @@
 # where the elements of the first list are the keys, and the elements of the second list are the values.
 # e.g. create_dict(['a', 'b', 'c'], [1, 2, 3]) yields {'a': 1, 'b': 2, 'c': 3}
 def create_dict(keys, values):
-    # +++your code here+++
-    return 
+    return dict(zip(keys, values))
 
 # B. Merge Dictionaries
 # Write a function `merge_dicts` that takes two dictionaries and merges them into one.
