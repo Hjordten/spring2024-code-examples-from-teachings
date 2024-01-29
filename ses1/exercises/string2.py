@@ -56,9 +56,24 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
-def front_back(a, b):
-  return ''  
 
+def front_back(a, b):
+  # First we check if the length of string a is odd
+
+  # we get the front of string a, remember to get the extra letter
+  
+  # we get the back of string a, remember to get the extra letter
+
+  # else  
+  # If the length of the string is even
+  # we get the front of string a, we dont need the extra letter, since the length is even
+  # we get the back of string a, we dont need the extra letter, since the length is even
+  # we check if the length of string b is odd 
+ # we get the front of string b, remember to get the extra letter
+ # we get the back of string b, remember to get the extra letter
+  #else    
+
+  return ''
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
