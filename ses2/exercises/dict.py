@@ -17,23 +17,24 @@ def create_dict(keys, values):
 # If there are overlapping keys, the values from the second dictionary should be used.
 # e.g. merge_dicts({'a': 1, 'b': 2}, {'b': 3, 'c': 4}) yields {'a': 1, 'b': 3, 'c': 4}
 def merge_dicts(dict1, dict2):
-    # +++your code here+++
-    return 
+    dict1.update(dict2)
+    return dict1
 
 # C. Get Value
 # Write a function `get_value` that takes a dictionary and a key, and returns the value associated with that key.
 # If the key is not in the dictionary, return 'Key not found'.
 # e.g. get_value({'a': 1, 'b': 2}, 'b') yields 2
 def get_value(dict, key):
-    # +++your code here+++
-    return 
+    return dict.get(key, 'Key not found')
 
 # D. Key Exists
 # Write a function `key_exists` that takes a dictionary and a key, and returns True if the key exists in the dictionary, otherwise False.
 # e.g. key_exists({'a': 1, 'b': 2}, 'c') yields False
 def key_exists(dict, key):
-    # +++your code here+++
-    return 
+    if key in dict.keys():
+        return True
+    else:
+        return False
 
 # E. Update Value
 # Write a function `update_value` that takes a dictionary, a key, and a value.
