@@ -9,56 +9,66 @@
 # Write a function `create_set` that takes a list of elements and returns a set containing the same elements.
 # e.g. create_set([1, 2, 3, 2]) yields {1, 2, 3}
 def create_set(list):
-    # +++your code here+++
-    return 
+    result_set = set()
+    for i in list:
+        if i is not result_set:
+            result_set.add(i)
+    return result_set 
 
 # B. Set Union
 # Write a function `union_sets` that takes two sets and returns their union.
 # e.g. union_sets({1, 2, 3}, {3, 4, 5}) yields {1, 2, 3, 4, 5}
 # Make 2 versions, one using the set method, and one using an operator.
 def union_sets(s1, s2):
-    # +++your code here+++
-    return 
+    #result_set = s1.union(s2)
+    result_set = s1 | s2
+    return result_set
 
 # C. Set Intersection
 # Write a function `intersect_sets` that takes two sets and returns their intersection.
 # e.g. intersect_sets({1, 2, 3}, {2, 3, 4}) yields {2, 3}
 # Make 2 versions, one using the set method, and one using an operator.
 def intersect_sets(s1, s2):
-    # +++your code here+++
-    return
+    #result_set = s1.intersection(s2)
+    result_set = s1 & s2
+    return result_set
 
 # D. Set Difference
 # Write a function `difference_sets` that takes two sets and returns the difference (elements in the first set but not in the second).
 # e.g. difference_sets({1, 2, 3}, {2, 3, 4}) yields {1}
 # Make 2 versions, one using the set method, and one using an operator.
 def difference_sets(s1, s2):
-    # +++your code here+++
-    return
+    #result_set = s1.difference(s2)
+    result_set = s1 - s2
+    return result_set
 
 # E. Symmetric Difference
 # Write a function `symmetric_difference_sets` that takes two sets and returns their symmetric difference (elements in either set but not in both).
 # e.g. symmetric_difference_sets({1, 2, 3}, {3, 4, 5}) yields {1, 2, 4, 5}
 # Make 2 versions, one using the set method, and one using an operator.
 def symmetric_difference_sets(s1, s2):
-    # +++your code here+++
-    return
+    #result_set = s1.symmetric_difference(s2)
+    result_set = s1 ^ s2
+    return result_set
 
 # F. Set Subset
 # Write a function `is_subset` that takes two sets and returns `True` if the first set is a subset of the second set, otherwise `False`.
 # e.g. is_subset({1, 2}, {1, 2, 3}) yields `True`
 # Make 2 versions, one using the set method, and one using an operator.
 def is_subset(s1, s2):
-    # +++your code here+++
-    return
+    #check_for_subset = s1.issubset(s2)
+    # Use the '<=' operator to check if s1 is a subset of s2
+    check_for_subset = s1 <= s2
+    return check_for_subset
 
 # G. Set Superset
 # Write a function `is_superset` that takes two sets and returns `True` if the first set is a superset of the second set, otherwise `False`.
 # e.g. is_superset({1, 2, 3}, {2, 3}) yields `True`
 # Make 2 versions, one using the set method, and one using an operator.
 def is_superset(s1, s2):
-    # +++your code here+++
-    return
+   # check_for_superset = s1.issuperset(s2)
+    check_for_superset = s1 > s2
+    return check_for_superset
 
 
 # Function to test the output against the expected result
