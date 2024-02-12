@@ -12,7 +12,18 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-  return  s
+  # first we check if the string is at least length of 3
+  if len(s) >= 3:
+    # check if it ends with ing
+    if s.endswith('ing'):
+      # we take the original string, and add ly to its end
+      return s + 'ly'
+    else:
+      # we take the original string, and add ing to its end
+      return s + 'ing'
+  return s
+
+       
 
 
 # E. not_bad
@@ -24,7 +35,17 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  return s
+ # first we check if not and bad exists in string
+ if 'not' in s and 'bad' in s:
+   # we find the index of not and bad
+   not_index = s.index('not')
+   bad_index = s.index('bad') + len('bad')
+   if not_index < bad_index:
+    not_bad_substring = s[not_index:bad_index]
+    s = s.replace(not_bad_substring, 'good')
+ return s      
+
+
   
 
 
@@ -35,9 +56,39 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
-def front_back(a, b):
-  return ''  
 
+# <object>[<number>:<number>] Accesses the elements from the first number, up to but not including, the second number
+# <object>[:<number>] Retrieves all elements from the start of the object up to, but not including, the specified index.
+# <object>[<number>:] Retrieves all elements from the specified index to the end of the object.
+# <object>[<number>] Accesses the element at the specified index position in the object.
+
+def front_back(a, b):
+  # First we check if the length of string a is odd
+  if len(a) % 2 != 0:
+   # we get the front of string a, remember to get the extra letter
+   a_front = a[:(len(a) // 2) + 1]
+   # we get the back of string a, remember to get the extra letter
+   a_back = a[(len(a) // 2) + 1:]
+  # else 
+  else:  
+  # we get the front of string a, we dont need the extra letter, since the length is even
+    a_front = a[:(len(a) // 2)]
+  # we get the back of string a, we dont need the extra letter, since the length is even
+    a_back = a[(len(a) // 2):]
+  # we check if the length of string b is odd 
+  if len(b) % 2 != 0:
+  # we get the front of string b, remember to get the extra letter
+    b_front = b[:(len(b) // 2) + 1]
+  # we get the back of string b, remember to get the extra letter
+    b_back = b[(len(b) // 2) + 1:]
+  #else    
+  else:  
+  # we get the front of string b, we dont need the extra letter, since the length is even
+     b_front = b[:(len(b) // 2)]
+  # we get the back of string b, we dont need the extra letter, since the length is even
+     b_back = b[(len(b) // 2):]
+  # return a formatted string with the correct variables   
+  return f'{a_front}{b_front}{a_back}{b_back}'
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
