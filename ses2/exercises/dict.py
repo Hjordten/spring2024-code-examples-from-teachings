@@ -42,24 +42,23 @@ def key_exists(dict, key):
 # Return the updated dictionary.
 # e.g. update_value({'a': 1, 'b': 2}, 'b', 3) yields {'a': 1, 'b': 3}
 def update_value(dict, key, value):
-    # +++your code here+++
-    return 
+    dict[key] = value
+    return dict
 
 # F. Remove Key
 # Write a function `remove_key` that takes a dictionary and a key, and removes the key from the dictionary.
 # If the key is not in the dictionary, return the original dictionary.
 # e.g. remove_key({'a': 1, 'b': 2}, 'a') yields {'b': 2}
 def remove_key(dict, key):
-    # +++your code here+++
-    return 
+    dict.pop(key, None)
+    return dict
 
 # G. Convert to List
 # Write a function `dict_to_list` that takes a dictionary and returns a list of tuples,
 # where each tuple is a key-value pair from the dictionary.
 # e.g. dict_to_list({'a': 1, 'b': 2}) yields [('a', 1), ('b', 2)]
 def dict_to_list(dict):
-    # +++your code here+++
-    return 
+    return list(dict.items())
 
 # Function to test the output against the expected result
 def test(got, expected):

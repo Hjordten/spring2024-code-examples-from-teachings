@@ -17,8 +17,11 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-    # +++your code here+++
-    return 
+    string_length_over_two = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            string_length_over_two += 1
+    return string_length_over_two
 
 
 # B. front_x
@@ -29,8 +32,23 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    # +++your code here+++
-    return 
+    list_start_with_x = []
+    list_dont_start_with_x = []
+    for word in words:
+     if word[0] == 'x':
+        list_start_with_x.append(word)
+     else:   
+        list_dont_start_with_x.append(word)
+     list_dont_start_with_x.sort()  
+     list_start_with_x.sort() 
+    sorted_list = list_start_with_x + list_dont_start_with_x    
+    return sorted_list
+
+# super short version
+#def front_x(words):
+#    with_x = sorted([word for word in words if word[0] == 'x'])
+#    without_x = sorted([word for word in words if word[0] != 'x'])
+#    return with_x + without_x
 
 
 
@@ -40,12 +58,16 @@ def front_x(words):
 # e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
-
-
-
 def sort_last(tuples):
-    # +++your code here+++
-    return 
+    # Define a function to get the last element of a tuple
+     def last_element(tup):
+        return tup[-1]
+    
+     # Use the sorted() function with the key parameter set to the last_element function
+     sorted_tuples = sorted(tuples, key=last_element)
+    
+     return sorted_tuples
+
 
 
 # Simple provided test() function used in main() to print
