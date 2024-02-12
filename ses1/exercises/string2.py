@@ -23,6 +23,9 @@ def verbing(s):
       return s + 'ing'
   return s
 
+def verbing(s): return s + 'ly' if s.endswith('ing') else s + 'ing' if len(s) >  2 else s
+
+
        
 
 
@@ -45,6 +48,9 @@ def not_bad(s):
     s = s.replace(not_bad_substring, 'good')
  return s      
 
+def not_bad(s): return s.replace(s[s.index('not'):s.index('bad')+3], 'good') if 'not' in s and 'bad' in s and s.index('not') < s.index('bad') else s
+
+
 
   
 
@@ -61,6 +67,7 @@ def not_bad(s):
 # <object>[:<number>] Retrieves all elements from the start of the object up to, but not including, the specified index.
 # <object>[<number>:] Retrieves all elements from the specified index to the end of the object.
 # <object>[<number>] Accesses the element at the specified index position in the object.
+
 
 def front_back(a, b):
   # First we check if the length of string a is odd
@@ -89,6 +96,11 @@ def front_back(a, b):
      b_back = b[(len(b) // 2):]
   # return a formatted string with the correct variables   
   return f'{a_front}{b_front}{a_back}{b_back}'
+
+
+
+
+
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.

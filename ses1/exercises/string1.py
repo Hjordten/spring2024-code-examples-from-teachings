@@ -25,6 +25,9 @@ def donuts(count):
       return f'Number of donuts: {count}'
     else:
        return 'Number of donuts: many'
+
+def donuts(count): return f'Number of donuts: {"many" if count >=  10 else count}'
+     
      
   
 
@@ -43,6 +46,9 @@ def both_ends(s):
    # <object>[<number>:]: Retrieves all elements from the specified index to the end of the object.
    # <object>[<number>]: Accesses the element at the specified index position in the object.
        return s[:2] + s[-2:]
+     
+def both_ends(s): return s[:2] + s[-2:] if len(s) >  2 else ''
+
 
 
 # C. fix_start
@@ -64,6 +70,9 @@ def fix_start(s):
   replaced_string = rest_of_string.replace(first_char, '*')
   return first_char + replaced_string
 
+def fix_start(s): return s[0] + s[1:].replace(s[0], '*')
+
+
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
@@ -84,6 +93,8 @@ def mix_up(a, b):
  replaced_string_a = string_b_first_two_letters + remaining_a
  replaced_string_b = string_a_first_two_letters + remaining_b
  return f'{replaced_string_a} {replaced_string_b}'
+
+
 
 
 # Provided simple test() function used in main() to print
