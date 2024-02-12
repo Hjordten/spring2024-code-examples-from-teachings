@@ -28,7 +28,8 @@ def linear_merge(list1, list2):
 # linear solution
 #def linear_merge(list1, list2):
     #result = []
-    #i1 = i2 = 0
+    #i1 = 0
+    #i2 = 0
 
     # Loop until one of the lists is exhausted
     #while i1 < len(list1) and i2 < len(list2):
