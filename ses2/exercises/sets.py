@@ -66,7 +66,9 @@ def is_subset(s1, s2):
 # e.g. is_superset({1, 2, 3}, {2, 3}) yields `True`
 # Make 2 versions, one using the set method, and one using an operator.
 def is_superset(s1, s2):
-   # check_for_superset = s1.issuperset(s2)
+    # check_for_superset = s1.issuperset(s2)
+    # Check if s1 is a proper superset of s2 by using the '>' operator.
+    # This returns True if s1 includes all elements of s2 and at least one more element not present in s2.
     check_for_superset = s1 > s2
     return check_for_superset
 
