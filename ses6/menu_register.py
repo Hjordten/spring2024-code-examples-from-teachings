@@ -1,19 +1,21 @@
-# menu_register.py
-
-menu_register = []
+registered_functions = {}
 
 def register(func):
-    """
-    A decorator to register functions in the menu_register list.
-    """
-    # Add the function to the register
-    menu_register.append(func)
+    registered_functions[func] = func
     return func
 
 @register
 def home():
-    return ("I'm the home page")
+    return ("I'm the home page",)
 
 @register
 def about():
-    return ("I'm the about page")
+    return ("I'm the about page",)
+
+# Accessing registered functions
+print(registered_functions)
+
+# Accessing a specific function
+home_page_function = registered_functions.get(home)
+if home_page_function:
+    print(home_page_function()[0])  # Accessing the first element of the tuple
