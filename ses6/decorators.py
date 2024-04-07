@@ -33,7 +33,7 @@ def add(n1, n2):
     print(n1 + n2)
 
 
-# add = addtekst(add)
+ add = addtekst(add)
 
 
 
