@@ -42,3 +42,7 @@ class Car:
         print(f"Model: {self.model}")
         print(f"BHP: {self.bhp}")
         print(f"MPH: {self.mph}")
+
+
+
+#dasdsad
